@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="Description" content="Hausarbeit Jonas Leonhard - Experimentelle Webtypografie SS2019" />
+    <meta name="author" content="Jonas Leonhard, 611179" />
+
+    <link rel="stylesheet" type="text/css" href="../views/menu.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../views/documentation.css" media="screen" />
+    
+    <title>Dokumentation Hausarbeit02 - Jole7181 - 611179</title>
+
+
+</head>
+
+<body>
+        <div class="svg-wrapper">
+            <svg height="60" width="320">
+                <rect class="shape" height="60" width="320" />
+            </svg>
+            <div class="menu">
+                <div class="label"><a href="../hausarbeit_jole7181_01.html">Jonas Leonhard</a></div>
+                <div class="spacer"></div>
+                <div class="item"><span><a href="./quellen.html">Quellen</a></span></div>
+                <div class="item">
+                    <span>Dokumentationen</span>
+                    <div class="itemhover"><a href="./dokumentation_exp01.html">Doku-EXP 01</a></div>
+                    <div class="itemhover"><a href="./dokumentation_exp02.html">Doku-EXP 02</a></div>
+                    <div class="itemhover"><a href="./dokumentation_exp03.html">Doku-EXP 03</a></div>
+                    <div class="itemhover"><a href="./dokumentation_exp04.html">Doku-EXP 04</a></div>
+                    <div class="itemhover"><a href="./dokumentation_hausarbeit01.html">Doku-Hausarbeit 01</a></div>
+                    <div class="itemhover"><a href="./dokumentation_hausarbeit02.html">Doku-Hausarbeit 02</a></div>
+                    <div class="itemhover"><a href="./dokumentation_hausarbeit03.html">Doku-Hausarbeit 03</a></div>
+                    <div class="itemhover"><a href="../src/Referat_Leonhard_Heppner.pdf">Referat</a></div>
+                </div>
+                <div class="item">
+                        <span>Experimente</span>
+                        <div class="itemhover"><a href="./exp01.html">EXP 01</a></div>
+                        <div class="itemhover"><a href="./exp02.html">EXP 02</a></div>
+                        <div class="itemhover"><a href="./exp03.html">EXP 03</a></div>
+                        <div class="itemhover"><a href="./exp04.html">EXP 04</a></div>
+                        <div class="itemhover"><a href="../hausarbeit_jole7181_01.html">Hausarbeit 01</a></div>
+                        <div class="itemhover"><a href="./hausarbeit_jole7181_02.html">Hausarbeit 02</a></div>
+                        <div class="itemhover"><a href="./hausarbeit_jole7181_03.html">Hausarbeit 03</a></div>
+                    </div>
+                <div class="item"><span><a href="./inspirationen.html">Inspirationen</a></span></div>
+    
+            </div>
+        </div>
+        </div>
+        <div class="wrapper">
+                <h1>Konzeptioneller Ansatz</h1>
+                <span>
+                    Der konzeptionelle Ansatz der zweiten Seite der Hausarbeit ist ein animiertes Filmposter, 
+                    das sich duch hover aufklappen lässt und einen Anrisstext über den Film offenbart.
+
+                    Inspirationen sind dafür ganz normale Filmposter, wie sie jetzt im Kino zu sehen sind. 
+                </span>
+        
+                <h1>Gestaltungsmittel / Technische Umsetzung</h1>
+                <span>
+                    <p>
+                        Ich wähle die typischen Inhalte für ein Filmplakat. Die Credits Box, Der Filmtitel,
+                        die Hauptfigur als double expousure image, und ein release date. 
+                    </p>
+                    <p>
+                        Preserve-3d cube-front, welche durch transition hover gedreht wird und alle children mitdreht.
+                        Hintergrund Regenfall durch anvas Javascript.
+                        Neoneffect Titel durch Keyframes Opacity / Layered Textshadow und Font.
+                        Datum Animation durch Keyframes als 2 Steps mit Textshadow.
+                        Hauptfigur 'double exposure' mittels bewegter Maske (Umriss des Kopfes), darüber
+                        Schwarz-weiß Bild der Hauptfigur mit mit blendmode: lighten. 
+                    </p>
+                </span>
+        
+                <h1>Der Entwicklungsprozess</h1>
+                <span>
+                    <p>
+                        Ich beginne die Entwicklung mit dem Cube. Dafür erstelle ich einen Cube Wrapper, den ich im Grid in der Mitte platziere.
+                       Dieser cube-wrapper bekommt den cube div, welcher die Höhe und Breite des cubes bestimmt.
+                       Durch Preserve-3d werden alle 3d transformation auf die children elemente übernommen.
+                       Mittels .cube-wrapper:hover .cube wird nun der ganze würfel durch transition animiert und gedreht.
+                       Die Cube inside-front ist die ohne hover zu sehende Vorderseite des Posters, inside-back ist die um 90 Grad
+                       nach innen rotierte Seite des Posters, welche durch hover nach vorne gedreht wird.
+                       Durch transform origin kann man bestimmen das von 100% des cubes transformiert wird, und somit von der 
+                       rechten Seite gedreht wird. Zusätzlich wird das .front mittels translateZ nach vorne gebracht, so das beide
+                       Ebenen front/back abschließen.
+                    </p>
+        
+                    <p>
+                        
+                    </p>
+                    <p>
+                        Nun beginne ich mit der .front seite des Würfels. Ich teile diesen in ein Grid ein um die Divs besser platzieren zu können.
+                        Ich erstelle die divs .out und .now, welche mittels keyframes 2-steps einen Textschadow
+                        an- und ausschalten, und somit den Eindruck vermitteln, sie würden von 3d zu 2d wechseln.
+                    </p>
+                    <p>
+                        Für den Hintergrund des Würfels .front erzeuge ich einen Canvas. Ich setze die Höhe und Breite des
+                        Canvas auf die Höhe und Breite des Würfels. 
+                        Nun erzeuge ich in der asynchronen Funktion start() mittels der await function addrain_drops() ein 
+                        Array mit so vielen Regentropfen Objekten, wie durch spacing (Abstand) zueinander
+                        auf den Canvas passen. 
+                        Danach rufe ich die Funktion draw() auf, die dieses Array auf den Canvas zeichnet und 
+                        die Regentropfen y Variable +speed und gravity rechnet, im array speichert und neu zeichnet.
+                        Zusätzlich werden die Regentropen immer scheller, je länger sie in der Luft sind.
+                        Ich erzeuge 4 verschiedene Regentropfen.png's in Photoshop für die Darstellung der Regentropfen.
+                        Dies erreiche ich, indem ich die Form eines Regentropfens maskiere und mittels eines weichen Pinsels über die 
+                        Außenseite der Maske gehe. Danach speichere ich 4 Versionen mit verschiedenen Blur Stufen ab, um Tiefe 
+                        in der Darstellung des Regens zu erzeugen.
+                    </p>
+                    <p>
+                       Für den Double Exposure Effect, nehme ich ein Royalty Free Image von 
+                       Pexels und Unsplash (siehe Quellen).
+                       Ich erzeuge ein man_wrapper div, das den bewegten Hintergrund, sowie die
+                       Hauptfigur als div enthält.
+                       Der Hintergrund div erhält als Hintergrund eine Stadt als Png, welche durch die Umrisse des 
+                       Mannes durch mask-image maskiert wird. 
+                       Durch background-position animiere ich den Hintergrund in der Maske.
+                       Das Schwarz-weiß-bild der Hauptfigur wird auf die gleich große Maske gelegt.
+                    </p>
+                    <p>
+                        Der Neon Effect ist die Schriftart Nixie One von Google Fonts (besser wäre eine Schrift, die wie Neon aussieht),
+                        das Neon div erhält einen Textshadow, der rot glüht und um das div geht.
+                        Mittels keyframes wird die opacity des Textshadows zum Blinken gebracht. 
+                    </p>
+
+                    <p>
+                        Die Credit Box besteht aus vielen spans mit jeweils der Klasse big oder small, 
+                        die die font-size des Textes bestimmen. 
+                    </p>
+
+                    <p>
+                        Für den Cube .back schreibe ich einen erfundenen Text der den Film beschreibt, und als Hintergrund zeige ich 
+                        das Bild der Stadt.
+                        
+                    </p>
+                    <h1>Nutzungsrechte</h1>
+                    <span>
+                        <p>
+                            Diese Seite (dokumentation_hausarbeit02.html, hausarbeit_jole7181_02.html,
+                            hausarbeit_jole7181_02.js) ist rechtefrei nutzbar. Ich stelle sie zu Lehrzwecken der
+                            Hochschule FLensburg zur Verfügung.
+                        </p>
+                    </span>
+        
+        </div> <!-- end wrapper-->
+    </body>
+
+
+</html>

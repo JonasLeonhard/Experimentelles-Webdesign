@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="Description" content="Hausarbeit Jonas Leonhard - Experimentelle Webtypografie SS2019" />
+    <meta name="author" content="Jonas Leonhard, 611179" />
+
+    <link rel="stylesheet" type="text/css" href="../views/menu.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../views/documentation.css" media="screen" />
+    
+    <title>Dokumentation Hausarbeit 01 - Jole7181 - 611179</title>
+
+
+</head>
+
+<body>
+    <div class="svg-wrapper">
+        <svg height="60" width="320">
+            <rect class="shape" height="60" width="320" />
+        </svg>
+        <div class="menu">
+            <div class="label"><a href="../hausarbeit_jole7181_01.html">Jonas Leonhard</a></div>
+            <div class="spacer"></div>
+            <div class="item"><span><a href="./quellen.html">Quellen</a></span></div>
+            <div class="item">
+                <span>Dokumentationen</span>
+                <div class="itemhover"><a href="./dokumentation_exp01.html">Doku-EXP 01</a></div>
+                <div class="itemhover"><a href="./dokumentation_exp02.html">Doku-EXP 02</a></div>
+                <div class="itemhover"><a href="./dokumentation_exp03.html">Doku-EXP 03</a></div>
+                <div class="itemhover"><a href="./dokumentation_exp04.html">Doku-EXP 04</a></div>
+                <div class="itemhover"><a href="./dokumentation_hausarbeit01.html">Doku-Hausarbeit 01</a></div>
+                <div class="itemhover"><a href="./dokumentation_hausarbeit02.html">Doku-Hausarbeit 02</a></div>
+                <div class="itemhover"><a href="./dokumentation_hausarbeit03.html">Doku-Hausarbeit 03</a></div>
+                <div class="itemhover"><a href="../src/Referat_Leonhard_Heppner.pdf">Referat</a></div>
+            </div>
+            <div class="item">
+                <span>Experimente</span>
+                <div class="itemhover"><a href="./exp01.html">EXP 01</a></div>
+                <div class="itemhover"><a href="./exp02.html">EXP 02</a></div>
+                <div class="itemhover"><a href="./exp03.html">EXP 03</a></div>
+                <div class="itemhover"><a href="./exp04.html">EXP 04</a></div>
+                <div class="itemhover"><a href="../hausarbeit_jole7181_01.html">Hausarbeit 01</a></div>
+                <div class="itemhover"><a href="./hausarbeit_jole7181_02.html">Hausarbeit 02</a></div>
+                <div class="itemhover"><a href="./hausarbeit_jole7181_03.html">Hausarbeit 03</a></div>
+            </div>
+            <div class="item"><span><a href="./inspirationen.html">Inspirationen</a></span></div>
+
+        </div>
+    </div>
+    </div>
+    <div class="wrapper">
+        <h1>Konzeptioneller Ansatz</h1>
+        <span>
+            Der konzeptionelle Ansatz der ersten Seite der Hausarbeit ist ein Konstruieren
+            aus Formen, die zusammen ein Wort ergeben.
+            Dabei finde ich den Effekt der überlappenden Muster von einem Plakat von Pinterest
+            sehr ansprechend und will dies mit verschiedenden Formen versuchen, die zusammen
+            einen typografischen Schriftzug ergeben.
+            Zusätzlich erstelle ich ein Haupt-Menü für alle Seiten.
+            <a href="https://www.pinterest.de/pin/47639708543279696/">Inspiration Pinterest - 29.06.2019</a>
+        </span>
+
+        <h1>Gestaltungsmittel / Technische Umsetzung</h1>
+        <span>
+            <p>
+                    Für das Menü erweitere ich den svg-wrapper, das Menü aus Experiment 04, welches ich in alle folgenden Seiten kopiere.
+                    In dem Div .menu befinden sich mehrere .item Klassen, welche durch das menu.css
+                    gestyled werden. Die .item Klassen besitzen float right und inline block.
+                    Jede .item Klasse besitzt die Klasse .itemhover, welche bei :hover von display:none zu
+                    display:block gesetzt werden.
+                    Auch der svg im Hintergrund des Menüs, wird bei :hover mittels animation animiert.
+            </p>
+            <p>
+                Verschachtelte Divs mit overflow-hidden, z-index, translate.
+                Formen durch width/height/background color oder Border-color bei Dreiecken, oder border-radius bei
+                Kreisen
+                Javascript- DOM manipulation durch Ansprechen der Klassen COLOR##,animieren von Fly_in / Fly_out durch
+                intervall transfrom translate
+                Zufällige Farben aus Farbarray.
+            </p>
+            <p>
+                Gestaltet wird der Name Jonas als Typografisches Wort, mittels überlagerter
+                Divs, denen Form und Farbe im css / js gegeben wird.
+            </p>
+        </span>
+
+        <h1>Der Entwicklungsprozess</h1>
+        <span>
+            <p>Ich beginne die Entwicklung mit einem letters div, mit dem ich die letters in
+                einem Wrapper per grid in der Mitte des Browserfensters platziere.</p>
+
+            <p>
+                Nun erstelle ich einen wrapper für jeden letter.
+                In diesen lettern erzeuge ich nach und nach divs, die ich mittels z-index überlagere.
+                Das obere der sich überlagerden Form-divs stelle ich jeweils auf overflow-hidden, und platziere
+                eines (oder mehrere) form-divs darin. Diese erzeugen die Stellen der Formen, bei denen sich zwei
+                Formen überlagern und eine weitere Farbe bilden.
+            </p>
+            <p>
+                Vom O-Letter gehe ich aus und translate alle anderen Wrapper so, das sie auf einer Ebene sind.
+                Nun platziere ich nach und nach weiter Formen und verschachtele diese nach dem oben beschriebenen
+                Prinzip.
+            </p>
+            <p>
+                Nachdem ich alle letter durch Formen erzeugt habe, gebe ich einzelnen Formen einen Schatten um
+                etwas mehr Tiefe in das Bild zu bringen.
+            </p>
+            <p>
+                Desweiteren weise ich jeder Farbe eine Klasse zu, welche ich mittels des hausarbeit_jole7181_01.js
+                scripts
+                gleich umfärbe.
+                Die Funktion Change_Color(element_className, Css_color, MODE) ändert die Farbe für eine gegebene Color
+                Klasse.
+                Ich rufe die Funktion außerdem doppelt in verschiednen Modi auf. Der mode bestimmt dabei,
+                wie die Farbe gewechselt wird, da bei Dreiecken die Border-color und bei Rechtecken die background color
+                gewechselt werden
+                muss.
+                Change_Color wird in Colorize() aufgerufen, welches diese für jede Color Klasse aufruft.
+                Colorize wird im Intervall von 1,5 Sekunden aufgerufen.
+            </p>
+            <p>
+                Beim Aufrufen der Seite wird ebenfalls das Intervall fly_in_animation aufgerufen.
+                Dieses ruft translateY für den Wrapper der letters auf und lässt diese so bis zu TranslateY(0vw);
+                hereinfliegen.
+                Beim Verlassen der Seite durch einen Link im Menü, wird flyout_animation(event) durch den event listener
+                vom Menü Objekt
+                aufgerufen. Dieser unterdrückt das Aufrufen des Links, und startet die flyout animation.
+                Ist die Animation fertig, ruft die Funktion den "geblockten" link auf.
+            </p>
+            <h1>Nutzungsrechte</h1>
+            <span>
+                <p>
+                    Die Funktion increase Brightness ist von stackoverflow.
+                    /**CODE 'IN THIS FUNCTION' TAKEN FROM->
+                    * https://stackoverflow.com/questions/6443990/javascript-calculate-brighter-colour
+                    * 26.06.2019
+                    */
+                </p>
+                <p>
+                    Ansonsten ist diese Seite (dokumentation_hausarbeit01.html, hausarbeit_jole7181_01.html,
+                    hausarbeit_jole7181_01.js) rechtefrei nutzbar. Ich stelle sie zu Lehrzwecken der
+                    Hochschule FLensburg zur Verfügung.
+                </p>
+            </span>
+
+
+    </div> <!-- end wrapper-->
+</body>
+
+
+</html>

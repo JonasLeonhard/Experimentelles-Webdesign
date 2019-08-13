@@ -1,0 +1,43 @@
+
+
+.item01doc{
+    grid-column: 1/10;
+    grid-row: 1/2;
+
+    /*Color*/
+    text-align: center;
+
+    color: #111111;
+
+
+}
+
+
+.item02doc{
+    grid-column: 1/10;
+    grid-row: 3/4;
+
+    /*Color*/
+
+
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+.image {
+    grid-column: 1/10;
+    grid-row: 2/3;
+
+}
+.item03doc{
+    grid-column: 1/10;
+    grid-row: 4/5;
+}
+
+.item04doc {
+    grid-column: 1/10;
+    grid-row: 5/6;
+}
+
