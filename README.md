@@ -1,5 +1,5 @@
 # Experimentelles-Webdesign
-Webpages with experimental Webdesigns using vanilla Javascript.
+Webpages with experimental webdesigns using vanilla Javascript.
 
 ![Mask](../master/git-readme/Screen01.png)
 ![Mask](../master/git-readme/Screen02.png)
