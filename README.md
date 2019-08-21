@@ -12,4 +12,4 @@ Webpages with experimental webdesigns using vanilla Javascript.
 -Animated canvas double exposure movie poster. On hover poster turns into a cube
 ![Mask](../master/git-readme/Screen06.png)
 ![Mask](../master/git-readme/Screen07.png)
--Songtext scatters and gets unreadable the wider the viewport.
+-Song lyrics scatters and gets unreadable the wider the viewport.
