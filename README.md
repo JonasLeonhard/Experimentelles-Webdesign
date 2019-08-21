@@ -6,7 +6,7 @@ Webpages with experimental Webdesigns using vanilla Javascript.
 -Randomly recoloring experimental typography
 ![Mask](../master/git-readme/Screen03.png)
 ![Mask](../master/git-readme/Screen04.png)
--Endless scrolling website, where user gets 'tired of driving' (the view gets obfuscated). He then can take a break, wich clears the screen.
+-Endless scrolling website, the user gets 'tired of driving' (the view gets obfuscated). He or she can take a break, wich clears the screen.
 ![Mask](../master/git-readme/Screen05.png)
 ![Mask](../master/git-readme/Screen05.2.png)
 -Animated canvas double exposure movie poster. On hover poster turns into a cube
